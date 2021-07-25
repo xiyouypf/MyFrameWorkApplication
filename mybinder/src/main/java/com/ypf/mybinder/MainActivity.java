@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.ypf.mybinder.po.Person;
 import com.ypf.mybinder.service.IYpfAidlInterface;
+import com.ypf.mybinder.service.YpfAidlService;
 
 import java.util.List;
 
@@ -50,8 +51,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void bindService() {
-        Intent intent = new Intent();
-        intent.setComponent(new ComponentName("com.ypf.mybinder.service", "com.ypf.mybinder.service.YpfAidlService"));
+//        Intent intent = new Intent();
+//        intent.setComponent(new ComponentName("com.ypf.mybinder.service", "com.ypf.mybinder.service.YpfAidlService"));
+        Intent intent = new Intent(this, YpfAidlService.class);
+        intent.setAction("com.ypf.mybinder");
         bindService(intent, connection, Context.BIND_AUTO_CREATE);
     }
 
