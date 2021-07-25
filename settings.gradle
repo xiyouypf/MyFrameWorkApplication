@@ -1,0 +1,3 @@
+include ':mybinder'
+include ':app'
+rootProject.name = "MyFrameWorkApplication"
